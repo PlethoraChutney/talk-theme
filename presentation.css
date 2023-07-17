@@ -1,3 +1,10 @@
+/* Fixes */
+
+.reveal video {
+    /* Not sure why, but videos are not colored correctly unless some filter is applied to them. */
+    filter: saturate(101%);
+}
+
 /* Layout helpers */
 
 .reveal .hidden {
@@ -27,8 +34,9 @@ div.conclusion-slide {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr 1fr;
 }
-div.conclusion-slide > p,
-div.conclusion-slide > img {
+
+div.conclusion-slide>p,
+div.conclusion-slide>img {
     margin: auto;
     width: max-content;
 }
@@ -55,13 +63,15 @@ div.h-flex {
     box-sizing: border-box;
 }
 
-img.bordered, video.bordered, iframe.bordered {
-  border: solid;
-  border-width: 2px;
-  padding: 8px;
-  box-sizing: border-box;
-  background-color: white;
-  margin: 5px;
+img.bordered,
+video.bordered,
+iframe.bordered {
+    border: solid;
+    border-width: 2px;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
 }
 
 /* -- fit-n setup */
@@ -73,18 +83,11 @@ div.fit-three {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width:100%;
+    width: 100%;
     height: 100%;
-    text-align:center;
+    text-align: center;
     margin-bottom: 20px;
     gap: 10px;
-}
-
-.fit-two > img,
-.fit-two pre,
-.fit-two > video {
-    max-width: 45%;
-    max-height: 40vh;
 }
 
 .fit-one div>img,
@@ -97,39 +100,28 @@ div.fit-three {
     max-width: 100%;
 }
 
-div.fit-one.r-stretch > img,
-div.fit-one.r-stretch > video,
-div.fit-one.r-stretch > div {
-    max-height: 100%;
-}
 
 /* -- fit-one */
 
-.fit-one img {
-    max-width: 100%;
-    max-height: 40vh;
-    vertical-align: middle;
-}
-
-.fit-one video {
-    max-width: 100%;
+div.fit-one.r-stretch>img,
+div.fit-one.r-stretch>video,
+div.fit-one.r-stretch>div {
     max-height: 100%;
-    vertical-align: middle;
+    max-width: 100%;
 }
 
-.fit-one iframe {
-    width: 820px;
-    height: 520px;
+.fit-one>div {
+    height: 100%
 }
 
 /* -- fit-two */
 
-div.fit-two.r-stretch > img,
-div.fit-two.r-stretch > video {
+div.fit-two.r-stretch>img,
+div.fit-two.r-stretch>video {
     max-height: 100%;
 }
 
-div.fit-two > p {
+div.fit-two>p {
     text-align: center;
     margin: auto;
 }
@@ -139,26 +131,34 @@ div.fit-two > p {
     height: 100%;
 }
 
-.fit-two > iframe {
+.fit-two>iframe {
     width: 66%;
     height: 100%;
 }
 
+.fit-two>img,
+.fit-two pre,
+.fit-two>video {
+    max-width: 45%;
+    max-height: 40vh;
+}
+
 /* -- fit-three and stack-three */
 
-.fit-three.r-stretch > img, .fit-three.r-stretch > video {
+.fit-three.r-stretch>img,
+.fit-three.r-stretch>video {
     max-height: 100%;
     max-width: 30%;
 }
 
-.fit-three.r-stretch > div {
+.fit-three.r-stretch>div {
     height: 100%;
     width: 30%;
     margin-left: 1%;
     margin-right: 1%;
 }
 
-.stack-three > img {
+.stack-three>img {
     height: 33%;
     max-width: 100%;
 }
@@ -172,7 +172,7 @@ div.read-text {
     justify-content: center;
 }
 
-div.read-text > p {
+div.read-text>p {
     width: 33vw;
     text-align: left;
 }
@@ -185,27 +185,28 @@ div.im-cap {
     align-items: center;
 }
 
-div.im-cap > video, div.im-cap > img {
+div.im-cap>video,
+div.im-cap>img {
     max-height: 90%;
 }
 
-div.im-cap > h2{
+div.im-cap>h2 {
     margin-bottom: 0;
 }
 
-div.im-cap > p {
+div.im-cap>p {
     margin: 0;
 }
 
 p.caption {
-    font-size: 12pt;
+    font-size: .75rem;
 }
 
 p.citation {
-    font-size: 8pt;
-    padding: 0;
+    font-size: 0.5rem;
     width: max-content;
-    margin: auto;
+    padding: 3px;
+    background-color: #FFFFFF99;
 }
 
 p.bottom-left {
@@ -240,7 +241,7 @@ div.inset {
     max-height: none;
 }
 
-.reveal pre{
+.reveal pre {
     max-width: 800px;
     max-height: none;
 }
@@ -254,7 +255,7 @@ span.fake-code {
     background-color: white;
 }
 
-div > pre {
+div>pre {
     width: 100%;
 }
 
@@ -287,27 +288,40 @@ div > pre {
 
 div.funding-img {
     width: 100%;
+    height: max-content;
     margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-areas: "image text";
 }
 
-div.funding-img > img {
+div.funding-img>img {
     margin: 0;
     padding: 0;
     max-width: 100%;
     max-height: 5em;
+    grid-area: image;
+}
+
+div.funding-img>div.grants {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #acknowledge h3 {
-    font-size: 24pt;
+    border-bottom: 1px solid white;
+    font-size: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 0;
 }
 
-#acknowledge > div {
+#acknowledge>div {
     justify-self: center;
 }
 
-#acknowledge > div.left {
+#acknowledge>div.left {
     grid-area: left;
 }
 
@@ -322,12 +336,12 @@ div.toc {
     color: #00000044;
 }
 
-div.toc > p {
+div.toc>p {
     margin-bottom: 0;
     margin-top: 0.5rem;
 }
 
-div.toc > p.current {
+div.toc>p.current {
     color: #000000;
 }
 
@@ -340,11 +354,11 @@ div.quote {
     font-weight: bold;
 }
 
-div.quote > p {
+div.quote>p {
     font-style: italic;
 }
 
-div.quote > p.attribution {
+div.quote>p.attribution {
     text-align: right;
     font-weight: normal;
 }
@@ -360,9 +374,8 @@ div.top-left {
 .reveal .overlay {
     position: absolute;
     background-color: #FFFFFFDD;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .reveal img.overlay {

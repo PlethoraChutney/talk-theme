@@ -24,16 +24,20 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --r-heading-text-shadow: none;
   --r-heading-font-weight: bold;
   --r-heading1-text-shadow: none;
-  --r-heading1-size: 5em;
-  --r-heading2-size: 3em;
-  --r-heading3-size: 2em;
-  --r-heading4-size: 1em;
+  --r-heading1-size: 5rem;
+  --r-heading2-size: 3rem;
+  --r-heading3-size: 2rem;
+  --r-heading4-size: 1rem;
   --r-code-font: JetBrains Mono, monospace;
   --r-link-color: #3788beff;
   --r-link-color-dark: #265e83;
   --r-link-color-hover: #81b6da;
   --r-selection-background-color: rgba(0, 0, 0, 0.99);
   --r-selection-color: #fff;
+}
+
+html {
+  font-size: var(--r-main-font-size);
 }
 
 .reveal-viewport {

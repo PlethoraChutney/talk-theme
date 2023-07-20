@@ -263,6 +263,16 @@ div>pre {
     text-decoration: line-through;
 }
 
+/* Styling */
+
+.drop-shadow.current-fragment {
+    filter: drop-shadow(100px 30px 4px #000000dd);
+}
+
+video.drop-shadow.current-fragment {
+    filter: saturate(101%) drop-shadow(0.2rem 0.2rem 0.1rem #00000099);
+}
+
 /* Specific Slides */
 
 /* -- Acknowledgements */

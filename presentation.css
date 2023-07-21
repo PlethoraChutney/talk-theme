@@ -177,6 +177,10 @@ div.read-text>p {
     text-align: left;
 }
 
+div.read-text>h2 {
+    width: 66vw;
+}
+
 div.im-cap {
     display: flex;
     width: max-content;

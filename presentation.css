@@ -12,10 +12,6 @@
     visibility: hidden;
 }
 
-.lowlight {
-    opacity: 25%;
-}
-
 .floater {
     position: absolute;
     background-color: #FFFFFF;
@@ -254,7 +250,7 @@ div.inset {
     margin-bottom: 0.5em;
 }
 
-span.fake-code {
+.fake-code {
     font-family: 'JetBrains Mono', monospace;
     background-color: white;
 }
@@ -395,4 +391,24 @@ div.top-left {
 .reveal img.overlay {
     max-height: 100%;
     max-width: 100%;
+}
+
+/* Lists */
+
+ol:first-of-type>ol {
+    list-style-type: lower-alpha;
+}
+
+.lowlight {
+    opacity: 25%;
+}
+
+.highlight-last>li,
+.highlight-last>li.fragment.visible {
+    opacity: 0.3;
+}
+
+.highlight-last>li:last-of-type,
+.highlight-last>li.fragment.current-fragment {
+    opacity: 1.0;
 }
